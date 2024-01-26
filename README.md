@@ -1,7 +1,8 @@
 # CactusRampage
 A small FPS wave shooter demo created with Godot 4 and C# 
 
-# SHORT TERM TODO
+## TODO
+### SHORT TERM
 - [ ] Add two more enemies
 - [ ] Make shotgun work correctly
 - [ ] Add wave and score system
@@ -12,7 +13,7 @@ A small FPS wave shooter demo created with Godot 4 and C#
 - [ ] Add ammo pickups
 - [ ] Better environment / level
 
-# LONG TERM TODO
+## LONG TERM
 - [ ] Better player controller movement
 - [ ] Settings
 - [ ] Better spawning system for props and enemies
