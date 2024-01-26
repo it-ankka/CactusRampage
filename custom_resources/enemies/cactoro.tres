@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3 uid="uid://kg1uiwbr0qhh"]
+
+[ext_resource type="Script" path="res://scripts/enemy/EnemyResource.cs" id="1_b6fqn"]
+
+[resource]
+script = ExtResource("1_b6fqn")
+Damage = 1
+Health = 3
+Speed = 5.0
+MeleeRange = 1.0
+AttackCooldownTime = 1.0

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjkqu5adqwy6v"]
+
+[sub_resource type="Gradient" id="Gradient_e4blj"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.478261, 0.639493, 0.706522)
+colors = PackedColorArray(0.180005, 0.180005, 0.180005, 0.65098, 1, 1, 1, 1, 0.180005, 0.180005, 0.180005, 0.65098, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hcgnk"]
+gradient = SubResource("Gradient_e4blj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="ChamberEmptyTextureRect" type="TextureRect"]
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_hcgnk")
+expand_mode = 3
+stretch_mode = 5

@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bggj4efpnq4de"]
+
+[ext_resource type="Script" path="res://scripts/ui/AmmoCounter.cs" id="1_hqohi"]
+[ext_resource type="PackedScene" uid="uid://cjkqu5adqwy6v" path="res://scenes/ui/chamber_empty_control.tscn" id="2_80ur7"]
+[ext_resource type="PackedScene" uid="uid://pggussngplej" path="res://scenes/ui/chamber_full_control.tscn" id="3_knovu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_semrq"]
+font_size = 24
+shadow_color = Color(0, 0, 0, 0.537255)
+shadow_offset = Vector2(2, 2)
+
+[node name="AmmoCounter" type="BoxContainer" node_paths=PackedStringArray("CurrentAmmoContainer", "ReserveAmmoCountLabel")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -52.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_hqohi")
+CurrentAmmoContainer = NodePath("CurrentAmmoContainer")
+ChamberEmptyControl = ExtResource("2_80ur7")
+ChamberFullControl = ExtResource("3_knovu")
+ReserveAmmoCountLabel = NodePath("ReserveAmmoLabel")
+
+[node name="CurrentAmmoContainer" type="BoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 36)
+layout_direction = 2
+layout_mode = 2
+alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ReserveAmmoLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_semrq")
+vertical_alignment = 1

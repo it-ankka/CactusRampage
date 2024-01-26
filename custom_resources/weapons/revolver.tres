@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://doklpcfgclrql"]
+
+[ext_resource type="PackedScene" uid="uid://ch5xmtxwpma5j" path="res://scenes/muzzle_flash_particles.tscn" id="1_e77d0"]
+[ext_resource type="AudioStream" uid="uid://bhyr2qelmumbt" path="res://assets/sounds/pistol.wav" id="1_y0dyl"]
+[ext_resource type="Script" path="res://scripts/weapon/WeaponResource.cs" id="2_yq1e3"]
+
+[resource]
+script = ExtResource("2_yq1e3")
+ShotSoundAudioStream = ExtResource("1_y0dyl")
+MuzzleFlashEffectScene = ExtResource("1_e77d0")
+Damage = 1
+ShotCooldown = 0.2
+Capacity = 6
+TotalCapacity = 18
+RecoilScale = 0.1
+RecoilAmplitude = Vector3(6, 3, 1)
+RecoilRandomness = Vector3(0.5, 0.5, 0.5)
+RecoilTweenTime = 0.05
+RecoilResetTime = 0.2

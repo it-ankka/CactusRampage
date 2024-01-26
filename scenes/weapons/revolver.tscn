@@ -1,0 +1,198 @@
+[gd_scene load_steps=17 format=3 uid="uid://ca0n4ipvo7ibi"]
+
+[ext_resource type="PackedScene" uid="uid://d11r7q2kglocg" path="res://assets/models/revolver/Revolver.glb" id="1_1chg7"]
+[ext_resource type="Script" path="res://scripts/weapon/Weapon.cs" id="2_wobff"]
+[ext_resource type="Resource" uid="uid://doklpcfgclrql" path="res://custom_resources/weapons/revolver.tres" id="3_sjuma"]
+[ext_resource type="AudioStream" uid="uid://bhqjtsv5h81f" path="res://assets/sounds/loadbullet2.ogg" id="4_dhuiu"]
+
+[sub_resource type="Animation" id="Animation_ymw58"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ReloadAudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ixg2d"]
+resource_name = "default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2yw6a"]
+resource_name = "reload"
+length = 0.5
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.25, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.135104, 0), Vector3(0, -0.1, 0), Vector3(0, -0.1, 0), Vector3(0, -0.135104, 0), Vector3(0, -0.135104, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.970403, 0, 1.309), Vector3(0.970403, 0, 1.309), Vector3(0.970403, 0, 1.65806), Vector3(0.970403, 0, 1.309)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ReloadBullet"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ReloadAudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jj68c"]
+_data = {
+"RESET": SubResource("Animation_ymw58"),
+"reload_end": SubResource("Animation_ixg2d"),
+"reload_loop": SubResource("Animation_2yw6a")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lw2wy"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g6y2c"]
+animation = &"reload_end"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r0h3r"]
+animation = &"reload_loop"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ojuqs"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wlibm"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8hsbh"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2qgkf"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5p0hg"]
+states/default/node = SubResource("AnimationNodeAnimation_lw2wy")
+states/default/position = Vector2(357, 100)
+states/reload_end/node = SubResource("AnimationNodeAnimation_g6y2c")
+states/reload_end/position = Vector2(431, 174)
+states/reload_loop/node = SubResource("AnimationNodeAnimation_r0h3r")
+states/reload_loop/position = Vector2(531, 100)
+transitions = ["Start", "default", SubResource("AnimationNodeStateMachineTransition_ojuqs"), "default", "reload_loop", SubResource("AnimationNodeStateMachineTransition_wlibm"), "reload_loop", "reload_end", SubResource("AnimationNodeStateMachineTransition_8hsbh"), "reload_end", "default", SubResource("AnimationNodeStateMachineTransition_2qgkf")]
+
+[node name="Revolver" node_paths=PackedStringArray("Muzzle", "AnimationTree") instance=ExtResource("1_1chg7")]
+script = ExtResource("2_wobff")
+Res = ExtResource("3_sjuma")
+Muzzle = NodePath("Muzzle")
+AnimationTree = NodePath("AnimationTree")
+
+[node name="Revolver_1" parent="RootNode" index="0"]
+transform = Transform3D(-4.37114e-06, -100, -4.37114e-06, 0, -4.37114e-06, 100, -100, 4.37114e-06, 1.91069e-13, 0, 0, 0)
+layers = 2
+
+[node name="Muzzle" type="Node3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128194, -0.509616)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_jj68c")
+}
+next/reload_loop = &"RESET"
+blend_times = [&"reload_loop", &"reload_loop", 0.25, &"reload_loop", &"RESET", 0.25]
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_jj68c")
+}
+tree_root = SubResource("AnimationNodeStateMachine_5p0hg")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="ReloadAudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("4_dhuiu")
+bus = &"Sfx"

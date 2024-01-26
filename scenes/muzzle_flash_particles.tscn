@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch5xmtxwpma5j"]
+
+[ext_resource type="Material" uid="uid://dtu6fn2k58hr0" path="res://materials/spark_material.tres" id="1_v0h3w"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4upwf"]
+material = ExtResource("1_v0h3w")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="Curve" id="Curve_67luc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_wwujr"]
+offsets = PackedFloat32Array(0.78, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.252028, 0.252028, 0.252028, 1)
+
+[node name="MuzzleFlashParticles" type="CPUParticles3D"]
+layers = 2
+emitting = false
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+randomness = 0.27
+lifetime_randomness = 0.2
+mesh = SubResource("QuadMesh_4upwf")
+direction = Vector3(0, 0, -1)
+spread = 5.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+linear_accel_min = -10.0
+linear_accel_max = 42.12
+damping_max = 1.0
+angle_max = 720.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_67luc")
+color = Color(0.964706, 0.933333, 0, 1)
+color_ramp = SubResource("Gradient_wwujr")
+hue_variation_min = -0.69
+hue_variation_max = 0.59
