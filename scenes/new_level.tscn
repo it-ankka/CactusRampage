@@ -1,0 +1,82 @@
+[gd_scene load_steps=16 format=3 uid="uid://bjgj3y3ixmfht"]
+
+[ext_resource type="Script" uid="uid://6j8xdkoysbg7" path="res://scripts/Game.cs" id="1_j4boi"]
+[ext_resource type="Environment" uid="uid://i8f7r8we03ke" path="res://env.tres" id="4_1hoa3"]
+[ext_resource type="PackedScene" uid="uid://bpxuxxh118q1" path="res://scenes/environment/house_1_003.tscn" id="4_06u5y"]
+[ext_resource type="Material" uid="uid://mmnilfbahbei" path="res://materials/ground_material.tres" id="5_358yg"]
+[ext_resource type="PackedScene" uid="uid://dkv6ubnuoy8wd" path="res://scenes/environment/house_6_002.tscn" id="5_ce4gn"]
+[ext_resource type="PackedScene" uid="uid://vuw0uo7ee6f1" path="res://scenes/player.tscn" id="6_jxpky"]
+[ext_resource type="PackedScene" uid="uid://ndwtparmxxyj" path="res://scenes/environment/house_9_002.tscn" id="6_t0nuk"]
+[ext_resource type="PackedScene" uid="uid://cg5tlvwvvc8me" path="res://scenes/environment/palm_tree_2_002.tscn" id="7_epatr"]
+[ext_resource type="PackedScene" uid="uid://5myegccw4bx7" path="res://scenes/environment/palm_tree_1_007.tscn" id="8_3una8"]
+[ext_resource type="PackedScene" uid="uid://bbhlxx3qxyj1u" path="res://scenes/environment/rock_1_001.tscn" id="9_tbg52"]
+[ext_resource type="PackedScene" uid="uid://c2yfkx1hw3nub" path="res://scenes/environment/rock_2_007.tscn" id="10_j7qw8"]
+[ext_resource type="PackedScene" uid="uid://ch57g6pk7rogl" path="res://scenes/environment/cactus_3_005.tscn" id="11_rsl64"]
+[ext_resource type="PackedScene" uid="uid://4ll6ebbajfmv" path="res://scenes/environment/cactus_2_001.tscn" id="12_y23fs"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qqb2r"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_68cdc"]
+material = ExtResource("5_358yg")
+size = Vector2(1000, 1000)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_j4boi")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_1hoa3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+layers = 3
+light_color = Color(1, 0.978009, 0.802462, 1)
+light_energy = 1.5
+shadow_enabled = true
+sky_mode = 1
+
+[node name="Environment" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_qqb2r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment"]
+mesh = SubResource("PlaneMesh_68cdc")
+
+[node name="Player" parent="." instance=ExtResource("6_jxpky")]
+unique_name_in_owner = true
+
+[node name="house1_003" parent="." instance=ExtResource("4_06u5y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.47933, 0, -7.81976)
+
+[node name="house6_002" parent="." instance=ExtResource("5_ce4gn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.47894, 0, -5.00956)
+
+[node name="house9_002" parent="." instance=ExtResource("6_t0nuk")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -2.80266, 0, -26.7879)
+
+[node name="house6_003" parent="." instance=ExtResource("5_ce4gn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4573, 0, -27.2175)
+
+[node name="Palm_tree_2_002" parent="." instance=ExtResource("7_epatr")]
+transform = Transform3D(-0.263787, -0.0205895, -0.964361, -0.272209, 0.960725, 0.0539472, 0.925375, 0.276739, -0.259032, -4.703, -0.231052, -19.062)
+
+[node name="Palm_tree_1_007" parent="." instance=ExtResource("8_3una8")]
+transform = Transform3D(0.999678, -0.0253644, 0.000471512, 0.025357, 0.998473, -0.0490762, 0.000773997, 0.0490724, 0.998795, 3.26362, -0.0614746, -16.6425)
+
+[node name="rock_1_001" parent="." instance=ExtResource("9_tbg52")]
+transform = Transform3D(8.94709, -0.2412, -4.45999, 0.0431951, 9.98961, -0.453595, 4.4663, 0.38657, 8.93884, -12.317, -0.193353, -18.009)
+
+[node name="rock_1_002" parent="." instance=ExtResource("9_tbg52")]
+transform = Transform3D(-3.7948, -0.292876, -6.81144, 0.0337037, 7.79459, -0.353926, 6.81765, -0.201552, -3.78959, 9.83633, -0.193353, -13.7021)
+
+[node name="rock_2_007" parent="." instance=ExtResource("10_j7qw8")]
+transform = Transform3D(-3.69415, 0.0159396, 9.29263, -0.0284709, 9.99992, -0.028471, -9.2926, -0.0369746, -3.69408, 0.174726, 0.0179244, -41.679)
+
+[node name="cactus_3_005" parent="." instance=ExtResource("11_rsl64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22173, 2.3648e-07, 0.120358)
+
+[node name="cactus_2_001" parent="." instance=ExtResource("12_y23fs")]
+transform = Transform3D(1, 0, 0, 0, 0.999998, -0.00221085, 0, 0.00221085, 0.999998, 2.76457, 0.000571158, 0.215814)

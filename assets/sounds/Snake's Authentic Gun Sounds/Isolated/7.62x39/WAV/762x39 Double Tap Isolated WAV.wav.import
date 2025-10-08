@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cr2bjqk58fhoh"
+path="res://.godot/imported/762x39 Double Tap Isolated WAV.wav-36204ce39fd3493f85ff086c12eee87e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Snake's Authentic Gun Sounds/Isolated/7.62x39/WAV/762x39 Double Tap Isolated WAV.wav"
+dest_files=["res://.godot/imported/762x39 Double Tap Isolated WAV.wav-36204ce39fd3493f85ff086c12eee87e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

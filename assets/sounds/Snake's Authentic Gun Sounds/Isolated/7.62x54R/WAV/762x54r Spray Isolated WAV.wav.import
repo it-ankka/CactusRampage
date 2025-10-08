@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chkisqajuy681"
+path="res://.godot/imported/762x54r Spray Isolated WAV.wav-785c58f4cac5623d7034b4c94950e3c9.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Snake's Authentic Gun Sounds/Isolated/7.62x54R/WAV/762x54r Spray Isolated WAV.wav"
+dest_files=["res://.godot/imported/762x54r Spray Isolated WAV.wav-785c58f4cac5623d7034b4c94950e3c9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

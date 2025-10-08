@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=3 uid="uid://vuw0uo7ee6f1"]
 
-[ext_resource type="Script" path="res://scripts/Player.cs" id="1_q2a4a"]
-[ext_resource type="Script" path="res://scripts/WorldCamera.cs" id="2_bpemp"]
-[ext_resource type="Script" path="res://scripts/weapon/WeaponManager.cs" id="2_wcynd"]
+[ext_resource type="Script" uid="uid://nlf48em5vx7s" path="res://scripts/Player.cs" id="1_q2a4a"]
+[ext_resource type="Script" uid="uid://cxvumuypfbiq0" path="res://scripts/WorldCamera.cs" id="2_bpemp"]
+[ext_resource type="Script" uid="uid://bxpx6big8awju" path="res://scripts/weapon/WeaponManager.cs" id="2_wcynd"]
 [ext_resource type="PackedScene" uid="uid://ca0n4ipvo7ibi" path="res://scenes/weapons/revolver.tscn" id="3_4w23u"]
 [ext_resource type="AudioStream" uid="uid://50dsygx5pvso" path="res://assets/sounds/outofammo.wav" id="3_hn2ns"]
 [ext_resource type="PackedScene" uid="uid://djs7lqr7y5i0p" path="res://scenes/weapons/rifle.tscn" id="4_5d350"]
 [ext_resource type="PackedScene" uid="uid://6tdaegilclrw" path="res://scenes/weapons/shotgun.tscn" id="6_bkpjo"]
-[ext_resource type="Script" path="res://scripts/components/HurtboxComponent.cs" id="6_dsggb"]
-[ext_resource type="Script" path="res://scripts/components/HealthComponent.cs" id="7_d8ysm"]
+[ext_resource type="Script" uid="uid://l2os50dy02yn" path="res://scripts/components/HurtboxComponent.cs" id="6_dsggb"]
+[ext_resource type="Script" uid="uid://l3652hha04fo" path="res://scripts/components/HealthComponent.cs" id="7_d8ysm"]
 [ext_resource type="PackedScene" uid="uid://bggj4efpnq4de" path="res://scenes/ui/ammo_counter.tscn" id="11_4lqii"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_nir0a"]
@@ -54,7 +54,7 @@ Arms = NodePath("Head/CanvasLayer/SubViewportContainer/SubViewport/WeaponCamera/
 Health = NodePath("HealthComponent")
 CameraAngleMax = 1.48353
 CameraAngleMin = -1.48353
-ArmsSwayAmount = 0.003
+ArmsSwayAmount = 0.001
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
@@ -99,13 +99,13 @@ fov = 60.0
 
 [node name="Revolver" parent="Head/CanvasLayer/SubViewportContainer/SubViewport/WeaponCamera/Arms" instance=ExtResource("3_4w23u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321599, -0.3189, -0.497323)
-visible = false
 
 [node name="Rifle" parent="Head/CanvasLayer/SubViewportContainer/SubViewport/WeaponCamera/Arms" instance=ExtResource("4_5d350")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329113, -0.189163, -0.694105)
+visible = false
 
 [node name="Shotgun" parent="Head/CanvasLayer/SubViewportContainer/SubViewport/WeaponCamera/Arms" instance=ExtResource("6_bkpjo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.316892, -0.346128, -0.216244)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.316892, -0.194404, -0.69724)
 visible = false
 
 [node name="WeaponManager" type="Node3D" parent="." node_paths=PackedStringArray("WeaponHolder", "ShootRay", "WeaponAudioPlayer")]
@@ -117,6 +117,8 @@ WeaponAudioPlayer = NodePath("WeaponAudioStreamPlayer")
 OutOfAmmoAudioStream = ExtResource("3_hn2ns")
 
 [node name="WeaponAudioStreamPlayer" type="AudioStreamPlayer" parent="WeaponManager"]
+pitch_scale = 0.75
+max_polyphony = 4
 bus = &"Sfx"
 
 [node name="HurtboxComponent" type="Area3D" parent="."]
@@ -168,6 +170,7 @@ script = SubResource("GDScript_nidvv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+layers = 2
 cast_shadow = 3
 mesh = SubResource("CapsuleMesh_0wh4b")
 

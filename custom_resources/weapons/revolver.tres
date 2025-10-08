@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ch5xmtxwpma5j" path="res://scenes/muzzle_flash_particles.tscn" id="1_e77d0"]
 [ext_resource type="AudioStream" uid="uid://bhyr2qelmumbt" path="res://assets/sounds/pistol.wav" id="1_y0dyl"]
-[ext_resource type="Script" path="res://scripts/weapon/WeaponResource.cs" id="2_yq1e3"]
+[ext_resource type="Script" uid="uid://b3rkpd5a5u4hi" path="res://scripts/weapon/WeaponResource.cs" id="2_yq1e3"]
 
 [resource]
 script = ExtResource("2_yq1e3")

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public partial class StateMachine : Node
 {
   [Export]
-  const bool DEBUG = true;
+  bool DEBUG = true;
 
   private bool initialized = false;
 

@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dnus2gjf6wf65"
+path.s3tc="res://.godot/imported/BountyHunter_alpha_3.png-601658f9a672a2202a66b02283e69894.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "d06e2add6c0c7996f7dbe81347ad407e"
+}
+
+[deps]
+
+source_file="res://assets/models/PSX-Western Characters pack/Characters/BountyHunter/BountyHunter_alpha_3.png"
+dest_files=["res://.godot/imported/BountyHunter_alpha_3.png-601658f9a672a2202a66b02283e69894.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

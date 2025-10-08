@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c6sfkdalrc5pb"
+path="res://.godot/imported/EliteCowboy2_3.png-f520b4f62788d846034b7653674dbf7e.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "3d7f232d92384a56356f3607bd5f162a"
+}
+
+[deps]
+
+source_file="res://assets/models/PSX-Western Characters pack/Characters/EliteCowboy2/EliteCowboy2_3.png"
+dest_files=["res://.godot/imported/EliteCowboy2_3.png-f520b4f62788d846034b7653674dbf7e.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

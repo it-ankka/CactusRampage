@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl0opj0rgqqt3"]
+
+[ext_resource type="PackedScene" uid="uid://cu2f7fe3hl5qi" path="res://assets/models/hands/FPS_Psx_Hаnds.fbx" id="1_nbtte"]
+
+[node name="FpsArms" instance=ExtResource("1_nbtte")]
+
+[node name="ArmRig" parent="." index="0"]
+transform = Transform3D(-1.15463, 1.00941e-07, 0, 4.41228e-15, 5.04706e-08, 1.15463, 1.00941e-07, 1.15463, -5.04706e-08, 1.90488e-08, -0.510393, -0.00796304)

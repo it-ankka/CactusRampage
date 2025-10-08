@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ba0ff54b8yy1w"
+path="res://.godot/imported/AR Reload Part 1 WAV.wav-8f7360f14781de29a4a7cdf48c961eca.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Snake's Authentic Gun Sounds/Reloads, Cycling & More/WAV/AR Reload Part 1 WAV.wav"
+dest_files=["res://.godot/imported/AR Reload Part 1 WAV.wav-8f7360f14781de29a4a7cdf48c961eca.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
